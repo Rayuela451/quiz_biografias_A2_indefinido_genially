@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿Qué pasó en su vida? — Pretérito indefinido A2</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{--yellow:#FADB63;--coral:#BA4F30;--teal:#158F91;--olive:#6A854F;--ink:#1D1811;--cream:#FFF7DF;--orange:#E68B42}
+*{box-sizing:border-box}body{margin:0;background:var(--yellow);color:var(--ink);font-family:Nunito,'Trebuchet MS',Arial,sans-serif}
+main{max-width:1080px;margin:0 auto;padding:19px 23px 22px;min-height:100vh;background:radial-gradient(circle at 96% 3%,#e68b4280 0 7%,transparent 7.2%),var(--yellow)}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}.kicker{color:var(--coral);font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}h1{font-size:clamp(27px,3.6vw,43px);margin:0;line-height:1.1;font-weight:900;letter-spacing:-.04em}.subtitle{margin:6px 0 0;font-size:14px;font-weight:700}.progress{border:2px solid var(--ink);background:var(--cream);border-radius:16px;min-width:100px;text-align:center;padding:9px 12px;font-size:12px;font-weight:900;box-shadow:3px 4px 0 var(--ink)}.progress strong{font-size:24px;display:block;color:var(--coral)}
+.quiz{background:var(--teal);color:#fff;border:3px solid var(--ink);border-radius:20px;box-shadow:7px 8px 0 var(--coral);padding:19px 22px 20px;animation:slide .3s ease}.counter{font-weight:900;font-size:12px;color:var(--yellow);letter-spacing:.12em}.question{font-size:clamp(20px,2.55vw,30px);font-weight:900;line-height:1.25;margin:8px 0 19px;max-width:800px}.answers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.option{font-family:inherit;font-size:clamp(14px,1.6vw,17px);font-weight:900;text-align:center;background:var(--cream);color:var(--ink);border:3px solid var(--ink);border-radius:15px;min-height:90px;padding:12px;cursor:pointer;box-shadow:3px 4px 0 var(--ink);transition:transform .15s,background .15s}.option .verb{color:var(--coral);font-weight:900;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}.feedback .verb{color:var(--yellow);font-weight:900;text-decoration:underline;text-underline-offset:3px}.option:hover:not(:disabled){transform:translateY(-3px);background:#FFE3A2}.option.correct{background:#DBF4D2;border-color:#245B39}.option.wrong{background:#FFD2C9;border-color:#8D241A}.option:disabled{cursor:default}.option:focus-visible,button:focus-visible{outline:4px dashed var(--orange);outline-offset:3px}.feedback{min-height:48px;margin-top:15px;font-weight:900;color:#fff;display:flex;align-items:center;gap:7px}.feedback.good{color:#E2FBD4}.feedback.bad{color:#FFE4CE}.actions{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px}.nav{font-family:inherit;font-size:15px;font-weight:900;background:var(--coral);border:3px solid var(--ink);border-radius:13px;box-shadow:3px 4px 0 var(--ink);color:white;padding:9px 19px;cursor:pointer}.nav:disabled{opacity:.42;cursor:not-allowed}.nav:hover:not(:disabled){background:var(--olive)}.dots{font-weight:900;letter-spacing:.15em;font-size:17px}.footer{font-size:12px;font-weight:700;margin:16px 0 0}.finish{text-align:center;padding:28px 10px}.finish h2{font-size:32px;color:var(--yellow);margin:6px 0}.finish p{font-size:18px}.finish .nav{margin-top:12px}
+@keyframes slide{from{opacity:.3;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}@media(max-width:650px){main{padding:13px}.quiz{padding:16px}.answers{grid-template-columns:1fr}.option{min-height:54px}.progress{min-width:73px;padding:5px}.question{font-size:20px}.feedback{min-height:52px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body><main>
+<header><div><div class="kicker">Español A2 · Antes de la biografía</div><h1>¿QUÉ PASÓ <span style="color:var(--coral)">EN SU VIDA?</span></h1><p class="subtitle">Lee la situación y elige la opción correcta en <strong>pretérito indefinido</strong>.</p></div><div class="progress" aria-live="polite">Aciertos<strong id="score">0 / 6</strong></div></header>
+<section class="quiz" id="quiz" aria-live="polite"></section>
+<p class="footer">Las situaciones son inventadas para practicar vocabulario biográfico.</p>
+</main>
+<script>
+const questions=[
+ {q:'Antes vivía en Chile. Ahora vive en España.',options:[['Se mudó','a otro país'],['Terminó','los estudios'],['Se jubiló','']],answer:0,explanation:['Se mudó','a otro país.']},
+ {q:'Terminó el colegio y comenzó a estudiar Medicina en una universidad.',options:[['Cambió','de trabajo'],['Empezó','la universidad'],['Tuvo','nietos']],answer:1,explanation:['Empezó','la universidad.']},
+ {q:'En su nueva clase conoció a muchas personas y ahora son sus amigas.',options:[['Hizo','amigos'],['Se divorció',''],['Empezó','a trabajar']],answer:0,explanation:['Hizo','amigos.']},
+ {q:'Antes trabajaba en una escuela. Ahora trabaja en un hospital.',options:[['Se casó',''],['Hizo','un intercambio'],['Cambió','de trabajo']],answer:2,explanation:['Cambió','de trabajo.']},
+ {q:'Estudió seis meses en una escuela de otro país y después regresó a casa.',options:[['Se jubiló',''],['Hizo','un intercambio'],['Tuvo','hijos']],answer:1,explanation:['Hizo','un intercambio.']},
+ {q:'Dejó de trabajar cuando llegó a la edad de jubilación.',options:[['Se jubiló',''],['Se mudó','a otra ciudad'],['Empezó','la secundaria']],answer:0,explanation:['Se jubiló','.']}
+];
+let index=0,answers=Array(questions.length).fill(null);
+const quiz=document.getElementById('quiz'),scoreEl=document.getElementById('score');
+function score(){return answers.filter((a,i)=>a===questions[i].answer).length}
+function render(){scoreEl.textContent=score()+' / '+questions.length;
+ if(index===questions.length){quiz.innerHTML='';const fin=document.createElement('div');fin.className='finish';const emoji=document.createElement('div');emoji.style.fontSize='48px';emoji.textContent=score()===6?'🌟':'🌻';const h=document.createElement('h2');h.textContent='¡Actividad terminada!';const p=document.createElement('p');p.textContent='Has acertado '+score()+' de '+questions.length+'. Ahora vamos a conocer la vida de Ana Tijoux.';const btn=document.createElement('button');btn.className='nav';btn.textContent='Volver a empezar ↻';btn.addEventListener('click',()=>{index=0;answers=Array(questions.length).fill(null);render()});fin.append(emoji,h,p,btn);quiz.append(fin);return}
+ const q=questions[index];quiz.innerHTML='';
+ const counter=document.createElement('div');counter.className='counter';counter.textContent='PREGUNTA '+(index+1)+' DE '+questions.length;
+ const title=document.createElement('div');title.className='question';title.textContent=q.q;
+ const options=document.createElement('div');options.className='answers';
+ q.options.forEach((label,j)=>{const btn=document.createElement('button');btn.className='option';const v=document.createElement('span');v.className='verb';v.textContent=label[0];btn.append(v,document.createTextNode(label[1]?' '+label[1]:''));btn.disabled=answers[index]!==null;if(answers[index]!==null){if(j===q.answer)btn.classList.add('correct');if(j===answers[index]&&j!==q.answer)btn.classList.add('wrong')};btn.addEventListener('click',()=>{answers[index]=j;render()});options.append(btn)});
+ const feedback=document.createElement('div');feedback.className='feedback';feedback.setAttribute('role','status');if(answers[index]!==null){const good=answers[index]===q.answer;feedback.classList.add(good?'good':'bad');feedback.append(document.createTextNode(good?'✓ ¡Correcto! ':'✕ No exactamente. '));const fv=document.createElement('span');fv.className='verb';fv.textContent=q.explanation[0];feedback.append(fv,document.createTextNode(' '+q.explanation[1]))}
+ const actions=document.createElement('div');actions.className='actions';const prev=document.createElement('button');prev.className='nav';prev.textContent='← Anterior';prev.disabled=index===0;prev.addEventListener('click',()=>{index--;render()});const dots=document.createElement('span');dots.className='dots';dots.textContent=Array.from({length:6},(_,i)=>i===index?'●':answers[i]!==null?'◆':'○').join(' ');const next=document.createElement('button');next.className='nav';next.textContent=index===questions.length-1?'Ver resultado →':'Siguiente →';next.disabled=answers[index]===null;next.addEventListener('click',()=>{index++;render()});actions.append(prev,dots,next);
+ quiz.append(counter,title,options,feedback,actions);
+}
+render();
+</script>
+</body></html>
